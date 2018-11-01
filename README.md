@@ -1,6 +1,6 @@
-# Welcome to My Savvy Coders Portfolio Project!! #
+# Welcome to My Savvy Coders Portfolio Project!! 
 
-## My name is Britten Sindelar##
+## My name is Britten Sindelar
 
 ![My picture](https://brittensindelar.files.wordpress.com/2013/03/dsc_0047.jpg)
 

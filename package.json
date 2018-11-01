@@ -1,0 +1,24 @@
+{
+  "name": "BrittenSindelar",
+  "version": "1.0.0",
+  "description": "## My name is Britten Sindelar",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CardsFan89/savvy-portfolio-brittensindelar.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CardsFan89/savvy-portfolio-brittensindelar/issues"
+  },
+  "homepage": "https://github.com/CardsFan89/savvy-portfolio-brittensindelar#readme",
+  "devDependencies": {
+    "eslint": "^5.8.0",
+    "parcel-bundler": "^1.10.3"
+  }
+}
