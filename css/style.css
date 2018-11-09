@@ -1,20 +1,55 @@
 body{
     background-color: orchid;
-
+    margin: 0;
 }
 
 #header {
     color: red;
     background-color:thistle;
+    padding-top: 25px;
 }
+h1 {
 
+}
 #content{
-    color:hotpink;
-    background-color:blue;
+    color:tomato;
+    background-color: blanchedalmond;
     padding: 20px;
 
 }
 
+#navigation {
+    background-color: red;
+    position: fixed;
+    top:0;
+    left:0;
+    width: 100vw;
+
+}
+
+#navigation > ul > li {
+    
+    padding: 10px;
+    position: relative;
+}
+
+#navigation li:hover{
+    background-color: grey;
+}
+#navigation > ul > li {
+    display: inline;
+}
+#navigation .dropdown {
+    left:0;
+    display: none;
+    position:absolute;
+    top:28px;
+}
+    
+#navigation a:hover + .dropdown,
+#navigation a + .dropdown:hover{
+    display: block;
+}
 .container{
     margin: 0 auto;
     max-width: 900px;
@@ -27,11 +62,13 @@ body{
 
 img{
     display: block;
-    margin: 1em, auto;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
     max-width: 300px;
     width: 80%;
 }
 
 .brand {
-    color: 
+    color: lightblue;
 }
