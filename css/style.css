@@ -1,34 +1,55 @@
 body{
     background-color: orchid;
-    margin: 0;
+    display: grid;
+    grid-template-rows: min-content min-content auto min-content;
+    grid-template-areas: 
+    "navigation"
+    "header"
+    "content"
+    "footer";                      
 }
 
 #header {
     color: red;
     background-color:thistle;
-    padding-top: 25px;
+    grid-area: header:
+    padding-top: 50px;
 }
 h1 {
+font-family: 'Orbitron', sans-serif;
+}
 
+h2{
+font-family: 'Orbitron', sans-serif;
+} 
 }
 #content{
     color:tomato;
+    grid-area: content;
     background-color: blanchedalmond;
     padding: 20px;
 
 }
 
-#navigation {
-    background-color: red;
-    position: fixed;
-    top:0;
-    left:0;
-    width: 100vw;
+#nagviation > ul {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding:0;
 
 }
 
+#navigation {
+    background-color: red;
+    grid-area: navigation;
+    position: sticky;
+    top: 0;
+}
+   
 #navigation > ul > li {
-    
+    display: inline;
     padding: 10px;
     position: relative;
 }
@@ -44,11 +65,24 @@ h1 {
     display: none;
     position:absolute;
     top:28px;
+
 }
     
 #navigation a:hover + .dropdown,
 #navigation a + .dropdown:hover{
     display: block;
+}
+@media (min-width:750px){
+    body {
+        background-color: aquamarine;
+        grid-auto-columns: 15% auto;
+        grid-template-rows: min-content auto min-content;
+        grid-template-areas: 
+        "navigation header"
+        "navigation content"
+        "navigation footer";
+    }
+
 }
 .container{
     margin: 0 auto;
@@ -58,6 +92,8 @@ h1 {
 
 #footer {
     background-color: forestgreen;
+    color: pink;
+    grid-area: footer;
 }
 
 img{
@@ -69,6 +105,8 @@ img{
     width: 80%;
 }
 
-.brand {
-    color: lightblue;
+#navigation > ul {
+    flex-direction: column;
+    
+
 }
