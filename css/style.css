@@ -1,6 +1,7 @@
 body{
     background-color: orchid;
     display: grid;
+    min-height: 100vh;
     grid-template-rows: min-content min-content auto min-content;
     grid-template-areas: 
     "navigation"
@@ -12,17 +13,15 @@ body{
 #header {
     color: red;
     background-color:thistle;
-    grid-area: header:
-    padding-top: 50px;
+    grid-area: header;
+    
 }
-h1 {
+#header h1,
+#header h2 {
 font-family: 'Orbitron', sans-serif;
 }
 
-h2{
-font-family: 'Orbitron', sans-serif;
-} 
-}
+
 #content{
     color:tomato;
     grid-area: content;
@@ -30,22 +29,28 @@ font-family: 'Orbitron', sans-serif;
     padding: 20px;
 
 }
-
-#nagviation > ul {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    padding:0;
-
+#footer {
+    background-color: forestgreen;
+    color: pink;
+    grid-area: footer;
 }
+
 
 #navigation {
     background-color: red;
     grid-area: navigation;
     position: sticky;
     top: 0;
+    
+}
+
+
+#nagviation > ul {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding:0;
 }
    
 #navigation > ul > li {
@@ -57,9 +62,7 @@ font-family: 'Orbitron', sans-serif;
 #navigation li:hover{
     background-color: grey;
 }
-#navigation > ul > li {
-    display: inline;
-}
+
 #navigation .dropdown {
     left:0;
     display: none;
@@ -72,29 +75,7 @@ font-family: 'Orbitron', sans-serif;
 #navigation a + .dropdown:hover{
     display: block;
 }
-@media (min-width:750px){
-    body {
-        background-color: aquamarine;
-        grid-auto-columns: 15% auto;
-        grid-template-rows: min-content auto min-content;
-        grid-template-areas: 
-        "navigation header"
-        "navigation content"
-        "navigation footer";
-    }
 
-}
-.container{
-    margin: 0 auto;
-    max-width: 900px;
-    width: 90%;
-}
-
-#footer {
-    background-color: forestgreen;
-    color: pink;
-    grid-area: footer;
-}
 
 img{
     display: block;
@@ -105,8 +86,22 @@ img{
     width: 80%;
 }
 
-#navigation > ul {
-    flex-direction: column;
-    
 
+
+@media (min-width:750px){
+    body {
+        background-color: aquamarine;
+        grid-auto-columns: 15% auto;
+        grid-template-rows: autos auto min-content;
+        grid-template-areas: 
+        "navigation header"
+        "navigation content"
+        "navigation footer";
+    }
+    #navigation > ul {
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+       
+}
 }
