@@ -1,5 +1,6 @@
-export default '
-<div id="header">
+export default `
+
+div id="header">
 <div class="container">
     
     <h1>Welcome to My Savvy Coders Portfolio Project!!</h1>
@@ -9,5 +10,8 @@ export default '
 </div>
 
 
-'
-;
+
+
+
+
+`;

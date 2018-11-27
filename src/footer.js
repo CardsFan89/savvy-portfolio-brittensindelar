@@ -2,7 +2,7 @@
 export default ` 
 <div id="footer">
 <div class="container">
-    Contact Information
+    <h3>Contact Information</h3>
 
     <ul>
         <li>
