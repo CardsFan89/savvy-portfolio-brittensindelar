@@ -1,5 +1,4 @@
 export default `
-
 <div id="header">
 <div class="container">
     
@@ -7,6 +6,7 @@ export default `
     <h2>My name is Britten Sindelar</h2>
     
 
+</div>
 </div>
 
 `;
