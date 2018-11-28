@@ -1,15 +1,15 @@
-var userName = prompt('What is  your name?');
+import Content from './src/Content';
+import Footer from './src/Footer';
+import Header from './src/Header';
+import Navigation from './src/Navigation';
+import greet from './src/greeting';
 
-var greet = function greet(){
-    if(userName){
-        userName = prompt( 'What is your name, for the this time?');
-    
-greet();
 
-    }
-else{ 
-    alert ('Hello ' + userName);
-
- };};
+document.querySelector('#root').innerHTML = ` 
+${Navigation}
+${Header}
+${Content}
+${Footer}
+`;
 
 greet();
