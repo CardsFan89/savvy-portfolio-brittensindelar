@@ -2,18 +2,12 @@
     background-color:orchid;
     display:grid;
     min-height: 100vh;
-    grid-template-rows: min-content 30vh auto min-content;
     grid-template-areas:
     "navigation"
     'header'
     'content'
     'footer';
    }
-
-
-
-
-
 body{
     background-color: orchid;
     display: grid;
