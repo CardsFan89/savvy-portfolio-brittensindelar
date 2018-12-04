@@ -1,25 +1,23 @@
-export default function navigation(){
+export default function navigation(state){
+    var links = state[state.active].links;
+    var list = '';
+
+    for(let i = 0; i < links.length; i++){
+        list += `
+            <li>
+                <a href='#'>${links[i]}</a>
+            </li>
+        `;
+    }
+
+    console.log(list);
+
     return `
+        <div id="navigation">
+            <ul class="container">
+                ${list}
+            </ul>
+        </div >
 
-<div id="navigation"> 
-<ul class="container">
-<li>
-    <a href="./blog">blog</a>
-</li>
-<li>
-    <a href="./contact">contact</a>
-</li>
-<li>
-    <a href="./projects">projects</a>
-    <ul class= "dropdown">
-        <li>first</li>
-        <li>second</li>
-        <li>third</li>
-    </ul>
-
-</li>
-</ul>
-</div>
-
-`;
+            `;
 }
