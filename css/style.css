@@ -9,7 +9,7 @@
     'footer';
    }
 body{
-    background-color: orchid;
+    /* background-color: orchid;
     display: grid;
     min-height: 100vh;
     grid-template-rows: min-content min-content auto min-content;
@@ -17,7 +17,7 @@ body{
     "navigation"
     "header"
     "content"
-    "footer";                      
+    "footer";                       */
 }
 
 #header {
@@ -99,10 +99,10 @@ img{
 
 
 @media (min-width:750px){
-    body {
+    #root {
         background-color: aquamarine;
         grid-auto-columns: 15% auto;
-        grid-template-rows: autos auto min-content;
+        grid-template-rows: auto auto min-content;
         grid-template-areas: 
         "navigation header"
         "navigation content"

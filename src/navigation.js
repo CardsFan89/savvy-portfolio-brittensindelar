@@ -7,7 +7,7 @@ export default function navigation(){
     <a href="./blog">blog</a>
 </li>
 <li>
-    <a href="./contact">Contact</a>
+    <a href="./contact">contact</a>
 </li>
 <li>
     <a href="./projects">projects</a>
