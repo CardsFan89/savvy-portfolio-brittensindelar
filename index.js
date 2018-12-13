@@ -15,42 +15,44 @@ var State = {
         'links': ['blog', 'contact', 'projects']
     },
     'blog': {
-        'title': 'Please read my blog'
-            `links': ['blog', 'contact', 'projects']
+        'title': 'Please read my blog',
+        'links': ['blog', 'contact', 'projects']
     },
 
     'contact': {
-        'title': 'Contact Me'
-        'links':['home', 'blog', 'projects' ]
+        'title': 'Contact Me',
+        'links': ['home', 'blog', 'projects']
     },
     'projects': {
-        'title': 'Look at my work'
-        'link': [ 'home', 'blog', 'contact']
+        'title': 'Look at my work',
+        'link': ['home', 'blog', 'contact']
     }
 };
 
 var root = document.querySelector('#root');
 
-function handleNavigation(params){
+function handleNavigation(params) {
     State.active = params.page;
 
     render(State); // eslint-disable-line
 }
-  function render(state){
-      root.innerHTML = `
+function render(state) {
+    root.innerHTML = `
       ${Navigation(state)}
       ${Header(state)}
       ${Content(state)}
       ${Foooter(state)} 
-    `; 
-  }
- 
-    greet();
-    router.updatePageLinks();
+    `;
 }
+
+greet();
+
+router.updatePageLinks();
+}
+
 render(State);
 
 router
-    .on('/:page' , handleNavigation)
-    .on('/',() => handleNavigation({'page' : 'home'}))
+    .on('/:page', handleNavigation)
+    .on('/', () => handleNavigation({ 'page': 'home' }))
     .resolve();
