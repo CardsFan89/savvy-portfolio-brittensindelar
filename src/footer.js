@@ -1,6 +1,7 @@
 
 export default function Footer(){
     return ` 
+    
 <div id="footer">
 <div class="container">
     <h3>Contact Information</h3>

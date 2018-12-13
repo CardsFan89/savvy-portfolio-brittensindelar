@@ -1,29 +1,28 @@
-export default function navigation(state){
-    var links = state[state.active].links;
-    var list = '';
-   
+import { capitalize } from 'loadash';
 
-    for(let i = 0; i < links.length; i++){
-        list += `
-        <li>
-        <a href='#'>${links[i]}</a>
-        `
-        }
-        list += `
-            <li>
-                <a href="/${link}">${links[i]}</a>
-            </li>
-        `;
+
+function buildLink(link){
+    var href = '';
+
+    if(link !== 'home'){
+        href = link;
     }
 
-    console.log(list);
-
     return `
-        <div id="navigation">
-            <ul class="container">
-                ${list}
-            </ul>
-        </div >
+    <li>
+        <a href= "/${href}" data navigo>
+            ${capitalize(link)}
+          </a>
+    </li>
+    `;
+}
 
-            `;
+export default function Navigation(state){
+    return `
+    <div id="navigation">
+    <ul class="container">
+        ${state[state.active].links.map(buildLink).join('')}
+    </ul>
+    </div>
+    `;
 }
