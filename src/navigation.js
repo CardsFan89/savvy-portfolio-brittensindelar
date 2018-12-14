@@ -1,5 +1,4 @@
-import { capitalize } from 'loadash';
-
+import { capitalize } from 'lodash';
 
 function buildLink(link){
     var href = '';
@@ -10,7 +9,7 @@ function buildLink(link){
 
     return `
     <li>
-        <a href= "/${href}" data navigo>
+        <a href= "/${href}" data-navigo>
             ${capitalize(link)}
           </a>
     </li>
@@ -20,9 +19,9 @@ function buildLink(link){
 export default function Navigation(state){
     return `
     <div id="navigation">
-    <ul class="container">
-        ${state[state.active].links.map(buildLink).join('')}
-    </ul>
+        <ul class="container">
+            ${state[state.active].links.map(buildLink).join('')}
+        </ul>
     </div>
     `;
 }
