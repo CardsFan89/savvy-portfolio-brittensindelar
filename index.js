@@ -3,6 +3,7 @@ import Footer from './src/Footer';
 import Header from './src/Header';
 import Navigation from './src/Navigation';
 import Navigo from 'navigo';
+import Store from './src/Store';
 
 
 var router = new Navigo(window.location.origin);
@@ -30,26 +31,17 @@ var State = {
     }
 };
 
-class Store{
-    constructor(state){
-        this.state = state;
-    }
-    dispatch(reducer){
-        this.state = reducer(this.state);
-        
-        render(this.state); //eslint-disable-line 
-    }
-}
-
 var store = new Store(State);
 
 function handleNavigation(params){
+    State.active = params.page;
     store.dispatch((state) => {
         state.active = params.page;
 
         return state;
     });
 }
+
 function render(state){
     root.innerHTML = `
       ${Navigation(state)}
@@ -61,6 +53,8 @@ function render(state){
     router.updatePageLinks();
 }
 
+store.addListener(render);
+
 router
     .on('/:page', handleNavigation)
     .on('/', () => handleNavigation({ 'page': 'home' }))
@@ -68,9 +62,12 @@ router
 
 fetch('https://jsonplaceholder.typicode.com/posts')
     .then((response) => response.json())
-    .then((posts) => store.dispatch((state) => {
-        state.posts = posts;
+    .then((posts) => {
+        store.dispatch((state) => {
+            state.posts = posts;
 
-        return state;
-    }));
+            return state;
+        });
+    });
+
 
