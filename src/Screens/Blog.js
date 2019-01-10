@@ -1,3 +1,5 @@
+import { html } from 'lit-html';
+
 export default function Blog(state){
     return state
         .posts

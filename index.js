@@ -4,6 +4,7 @@ import Header from './src/Header';
 import Navigation from './src/Navigation';
 import Navigo from 'navigo';
 import Store from './src/Store';
+import { html, render } from 'lit-html';
 
 
 var router = new Navigo(window.location.origin);
@@ -42,18 +43,35 @@ function handleNavigation(params){
     });
 }
 
-function render(state){
-    root.innerHTML = `
-      ${Navigation(state)}
-      ${Header(state)}
-      ${Content(state)}
-      ${Footer(state)} 
+function App(state){
+    return html`
+    ${Navigation(state)}
+    ${Header(state)}
+    ${Content(state)}
+    ${Footer(state)}
     `;
-
-    router.updatePageLinks();
 }
 
-store.addListener(render);
+function start(state){
+    render(App(state),root);
+}
+store.addListener(start);
+// store.addListener(() => router.updatePageLinks());
+document
+    .querySelectorAll('a')
+    .forEach((link) => link.addEventListener((event) => event.preventDefault()));
+
+// function render(state){
+//     root.innerHTML = `
+//       ${Navigation(state)}
+//       ${Header(state)}
+//       ${Content(state)}
+//       ${Footer(state)}
+//     `;
+
+router.updatePageLinks();
+// }
+
 
 router
     .on('/:page', handleNavigation)
